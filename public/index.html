@@ -1,0 +1,110 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="valueGet">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>Sunlight Sensor Table</title>
+
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #my-table              { margin-bottom:30px; }
+    </style>
+
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="core.js"></script>
+
+    
+    <!-- TABLE STYLING -->
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+        }
+    </style>
+</head>
+    
+    
+<!-- SET THE CONTROLLER AND GET ALL VALUES -->
+<body ng-controller="mainController">
+    <div class="container">
+
+        <!-- HEADER AND VALUE COUNT -->
+        <div class="jumbotron text-center">
+            <h1>Number of Values in DB = <span class="label label-info">{{ myvalues.length }}</span></h1>
+        </div>
+
+        <!-- VALUE LIST -->
+        <div id="my-table" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <table style="width:80%">
+                    <tr>
+                        <th style="text-align:center" >Sensor ID</th>
+                        <th style="text-align:center" >Sensor Value</th>		
+                    </tr>
+                    <tr ng-repeat="myvalue in myvalues">
+                    <!-- LOOP OVER THE VALUES IN $scope.myvalues -->
+                        <td style="text-align:center" > <label> {{ myvalues[$index].SensorID }} </label> </td>
+                        <td style="text-align:center" > <label> {{ myvalues[$index].SensorVal }} </label> </td>
+                    </tr> 
+                </table>
+            </div>
+        </div>
+    </div>
+ 
+<div id="chart" class="col-sm-4 col-sm-offset-4">    
+<p><br><br></p>
+<style>
+.chart div {
+  font: 15px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 10px;
+  margin: 1px;
+  color: white;
+}
+</style>
+ 
+<!--
+<div class="chart"></div>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+    /*var z = 0;
+    while (z <25) {    
+        chartData[z] = $scope.myvalues[z].SensorVal;
+        z++;
+    }*/
+    chartData = [300,162,405,492,394]
+</script>
+    
+<script>   
+var x = d3.scale.linear()
+    .domain([0, d3.max(chartData)])
+    .range([0, 420]);
+
+d3.select(".chart")
+  .selectAll("div")
+    .data(chartData)
+  .enter().append("div")
+    .style("width", function(d) { return x(d) + "px"; })
+    .text(function(d) { return d; });
+</script>
+<p><br><br></p>
+</div>
+-->   
+    
+
+</body>  
+</html>
