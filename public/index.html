@@ -22,6 +22,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
     <script src="core.js"></script>
+   
 
     
     <!-- TABLE STYLING -->
@@ -77,33 +78,32 @@
 }
 </style>
  
-<!--
-<div class="chart"></div>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script>
-    /*var z = 0;
-    while (z <25) {    
-        chartData[z] = $scope.myvalues[z].SensorVal;
-        z++;
-    }*/
-    chartData = [300,162,405,492,394]
-</script>
-    
-<script>   
-var x = d3.scale.linear()
-    .domain([0, d3.max(chartData)])
-    .range([0, 420]);
 
-d3.select(".chart")
-  .selectAll("div")
-    .data(chartData)
-  .enter().append("div")
-    .style("width", function(d) { return x(d) + "px"; })
-    .text(function(d) { return d; });
+<div class="chart" ></div>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+<script >
+//     var z = 0;
+//     while (z < 25) {    
+//         var chartData = new Array("")
+//         chartData[z] = myvalues[z].SensorVal;
+//         z++;
+//     }
+//    // chartData = [300,162,405,492,394]
+   
+// var x = d3.scale.linear()
+//     .domain([0, d3.max(chartData)])
+//     .range([0, 420]);
+
+// d3.select(".chart")
+//   .selectAll("div")
+//     .data(chartData)
+//   .enter().append("div")
+//     .style("width", function(d) { return x(d) + "px"; })
+//     .text(function(d) { return d; });
 </script>
 <p><br><br></p>
 </div>
--->   
+  
     
 
 </body>  
