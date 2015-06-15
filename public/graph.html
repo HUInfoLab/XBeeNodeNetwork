@@ -41,33 +41,9 @@
     
 <!-- SET THE CONTROLLER AND GET ALL VALUES -->
 <body ng-controller="mainController">
-    <div class="container">
 
-        <!-- HEADER AND VALUE COUNT -->
-        <div class="jumbotron text-center">
-            <h1>Number of Values in DB = <span class="label label-info">{{ myvalues.length }}</span></h1>
-        </div>
-        <!-- VALUE LIST -->
-        <div id="my-table" class="row">
-            <div class="col-sm-4 col-sm-offset-4">
-                <table style="width:80%">
-                    <tr>
-                        <th style="text-align:center" >Sensor ID</th>
-                        <th style="text-align:center" >Sensor Value</th>		
-                    </tr>
-                    <tr ng-repeat="myvalue in myvalues">
-                    <!-- LOOP OVER THE VALUES IN $scope.myvalues -->
-                        <td style="text-align:center" > <label> {{ myvalues[$index].SensorID }} </label> </td>
-                        <td style="text-align:center" > <label> {{ myvalues[$index].SensorVal }} </label> </td>
-                    </tr> 
-                </table>
-            </div>
-        </div>
-       <p style="text-align:right"><INPUT TYPE="button" onClick="history.go(0)" VALUE="Update Table"></p>
-        <form action="graph.html" style="text-align:right">
-            <input type="submit" value="Interactive Graph">
-        </form>
-        
-    </div>
+<p style="text-align:center"><INPUT TYPE="button" onClick="history.go(0)" VALUE="Update Chart"></p>
+<svg id="chart" width="1000" height="500"></svg>
+
 </body>  
 </html>

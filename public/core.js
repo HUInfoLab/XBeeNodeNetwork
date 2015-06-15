@@ -30,7 +30,7 @@ function mainController($scope, $http) {
               bottom: 20,
               left: 50
           },  
-          xScale = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right]).domain([0,20]), // change to dynamic ranges depending on data         
+          xScale = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right]).domain([0,($scope.myvalues.length-1)]), // change to dynamic ranges depending on data         
           yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([100,1000]), // same goes for the yScale         
           xAxis = d3.svg.axis()
           .scale(xScale),        
@@ -60,11 +60,11 @@ function mainController($scope, $http) {
           
           vis.append('svg:path')
           .attr('d', lineGen(chartData.children)) //pass your data object into here
-          .attr('stroke', 'green') //style and color setting
+          .attr('stroke', '#5bc0de') //style and color setting
           .attr('stroke-width', 2)
-          .attr('fill', 'none');
-          
+          .attr('fill', 'none');            
         })
+    
         .error(function(data) {
             console.log('Error: ' + data);
         });
