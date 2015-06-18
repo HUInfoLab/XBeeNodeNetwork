@@ -10,11 +10,7 @@
     "dependencies"  : {
         "xbee-api"  : "~0.3.12",
         "serialport": "~1.7.4",
-        "mongoose"  : "~3.8.0",
-        "express"   : "~4.7.2",
-        "morgan"    : "~1.2.2",
-        "body-parser"       : "~1.5.2",
-        "method-override"   : "~2.1.2"  
+        "mongoose"  : "~3.8.0"
     },
     "repository"    : {}
 }
