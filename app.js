@@ -37,14 +37,17 @@ serialport.on("open", function () {
         var currentTime = timeArray[0];       
         //parse contents
         var stringdata = String(data);
-        var dataArray = stringdata.split(" ");
+        var dataArray = stringdata.split(' ');
         var id = dataArray[0];
         var value = dataArray[1];
-        console.log("ID#: " + id + ", Time: " + currentTime + ", Value: " + value);
-        //Write to DB
-        var dataWrite = new myvalue({ SensorID: id, SensorTime: currentTime, SensorVal: value })
-        dataWrite.save(function (err, dataWrite) {
-            if (err) return console.error(err);
-        });
+        if ((id == "1111" || id == "2222") && (value != "" && value != " "))
+        {
+            console.log("ID#: " + id + ", Time: " + currentTime + ", Value: " + value);
+            //Write to DB
+            var dataWrite = new myvalue({ SensorID: id, SensorTime: currentTime, SensorVal: value })
+            dataWrite.save(function (err, dataWrite) {
+                if (err) return console.error(err);
+            });
+        }
     });
 });
