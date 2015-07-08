@@ -39,7 +39,7 @@ serialport.on("open", function () {
         var stringdata = String(data);
         var dataArray = stringdata.split(' ');
         var id = dataArray[0];
-        var value = dataArray[1];
+        var value = dataArray[1]*3;
         if ((id == "1111" || id == "2222") && (value != "" && value != " "))
         {
             console.log("ID#: " + id + ", Time: " + currentTime + ", Value: " + value);

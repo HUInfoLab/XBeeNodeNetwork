@@ -19,7 +19,7 @@ void loop() {
   sensors_event_t event;
   tsl.getEvent(&event);
   String ID = "1111 "; //BOARD ID
-  Serial.print(ID + (((int)(event.light/2)))); 
+  Serial.print(ID + (((int)(event.light/3)))); 
   delay(5000);
 }
 
