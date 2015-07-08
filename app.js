@@ -39,8 +39,13 @@ serialport.on("open", function () {
         var stringdata = String(data);
         var dataArray = stringdata.split(' ');
         var id = dataArray[0];
-        var value = dataArray[1]*3;
-        if ((id == "1111" || id == "2222") && (value != "" && value != " "))
+        if (id == "1111") {
+            var value = dataArray[1]*3;
+        }
+        else {
+            var value = dataArray[1];
+        }
+        if ((id == "1111" || id == "2222") && (value != "" && value != " ")) //need to add other nodes to validity check
         {
             console.log("ID#: " + id + ", Time: " + currentTime + ", Value: " + value);
             //Write to DB
